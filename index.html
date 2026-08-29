@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bows and Spoons — First Bites</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Bows and Spoons First Bites — a gentle, science-backed allergen introduction kit for infants. First bites. Big steps.">
+<meta name="theme-color" content="#f6f1e8">
+<meta property="og:title" content="Bows and Spoons — First Bites">
+<meta property="og:description" content="A gentle, science-backed allergen introduction kit for infants. First bites. Big steps.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23a99cdb'/%3E%3Cg fill='none' stroke='%23fff' stroke-width='1.7' stroke-linecap='round'%3E%3Cellipse cx='11' cy='17' rx='3.2' ry='2.5'/%3E%3Cpath d='M14 15.5c3-1 5-1 7 0'/%3E%3Cpath d='M14 18.5c3 1 5 1 7 0'/%3E%3Cellipse cx='23' cy='17' rx='4' ry='3'/%3E%3C/g%3E%3Cpath d='M15 15c-3-3-6-2.5-4.5.5c-1.5 3 1.5 3.5 4.5.5z' fill='%23fff'/%3E%3Cpath d='M15 15c3-3 6-2.5 4.5.5c1.5 3-1.5 3.5-4.5.5z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+/* ══════════════════════════════════════════════════════════════════
+   Bows and Spoons — brand tokens (also in brand-tokens.css)
+   Light (cream) is the default; dark (navy) mirrors the brand sheet.
+   ══════════════════════════════════════════════════════════════════ */
+:root{
+  /* brand ground & ink — cream + navy */
+  --cream:#f6f1e8; --cream-2:#fffdf9; --navy:#1b1c2e; --navy-2:#24263f;
+  --brand-lavender:#a99cdb; --brand-lavender-deep:#8577c2;
+
+  /* semantic light palette */
+  --bg:var(--cream); --surface:var(--cream-2); --surface-2:#f0e9db;
+  --ink:#1b1c2e; --ink-soft:color-mix(in srgb,#1b1c2e 66%,transparent);
+  --ink-faint:color-mix(in srgb,#1b1c2e 46%,transparent);
+  --border:color-mix(in srgb,#1b1c2e 12%,transparent);
+  --accent:#6a5cb0;             /* lavender, tuned for text/interaction on cream */
+  --accent-soft:#a99cdb; --accent-tint:color-mix(in srgb,#6a5cb0 10%,transparent);
+  --on-accent:#fffdf9;
+  /* health-status semantics (from the design system) */
+  --success:#3f9b6e; --success-tint:color-mix(in srgb,#3f9b6e 14%,transparent);
+  --caution:#c1843a; --caution-tint:color-mix(in srgb,#c1843a 15%,transparent);
+  --danger:#c85a50; --danger-ink:#fff; --danger-tint:color-mix(in srgb,#c85a50 12%,transparent);
+  --danger-edge:color-mix(in srgb,#c85a50 34%,transparent);
+
+  --shadow-sm:0 1px 2px rgba(27,28,46,.06),0 0 0 1px rgba(27,28,46,.05);
+  --shadow-md:0 8px 24px rgba(27,28,46,.10),0 0 0 1px rgba(27,28,46,.05);
+  --shadow-lg:0 24px 60px rgba(27,28,46,.16),0 0 0 1px rgba(27,28,46,.05);
+
+  --font-display:"Fraunces",Georgia,"Times New Roman",serif;
+  --font-body:"Inter",system-ui,-apple-system,sans-serif;
+  --radius-sm:8px; --radius-md:14px; --radius-lg:22px; --radius-pill:999px;
+  --maxw:1140px; --nav-h:66px;
+}
+:root:not([data-theme="light"]) { color-scheme:light; }
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:var(--navy); --surface:var(--navy-2); --surface-2:#2c2e4a;
+    --ink:#f3efe6; --ink-soft:color-mix(in srgb,#f3efe6 70%,transparent);
+    --ink-faint:color-mix(in srgb,#f3efe6 48%,transparent);
+    --border:color-mix(in srgb,#f3efe6 15%,transparent);
+    --accent:#b9adf5; --accent-soft:#a99cdb; --accent-tint:color-mix(in srgb,#b9adf5 15%,transparent);
+    --on-accent:#1b1c2e;
+    --success:#6dbe97; --success-tint:color-mix(in srgb,#6dbe97 15%,transparent);
+    --caution:#e6c48d; --caution-tint:color-mix(in srgb,#e6c48d 15%,transparent);
+    --danger:#e0857c; --danger-ink:#1b1015; --danger-tint:color-mix(in srgb,#e0857c 13%,transparent);
+    --danger-edge:color-mix(in srgb,#e0857c 36%,transparent);
+    --shadow-sm:0 0 0 1px rgba(243,239,230,.08);
+    --shadow-md:0 0 0 1px rgba(243,239,230,.10),0 8px 24px rgba(0,0,0,.5);
+    --shadow-lg:0 0 0 1px rgba(243,239,230,.14),0 24px 60px rgba(0,0,0,.6);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:var(--navy); --surface:var(--navy-2); --surface-2:#2c2e4a;
+  --ink:#f3efe6; --ink-soft:color-mix(in srgb,#f3efe6 70%,transparent);
+  --ink-faint:color-mix(in srgb,#f3efe6 48%,transparent);
+  --border:color-mix(in srgb,#f3efe6 15%,transparent);
+  --accent:#b9adf5; --accent-soft:#a99cdb; --accent-tint:color-mix(in srgb,#b9adf5 15%,transparent);
+  --on-accent:#1b1c2e;
+  --success:#6dbe97; --success-tint:color-mix(in srgb,#6dbe97 15%,transparent);
+  --caution:#e6c48d; --caution-tint:color-mix(in srgb,#e6c48d 15%,transparent);
+  --danger:#e0857c; --danger-ink:#1b1015; --danger-tint:color-mix(in srgb,#e0857c 13%,transparent);
+  --danger-edge:color-mix(in srgb,#e0857c 36%,transparent);
+  --shadow-sm:0 0 0 1px rgba(243,239,230,.08);
+  --shadow-md:0 0 0 1px rgba(243,239,230,.10),0 8px 24px rgba(0,0,0,.5);
+  --shadow-lg:0 0 0 1px rgba(243,239,230,.14),0 24px 60px rgba(0,0,0,.6);
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:500;line-height:1.08;letter-spacing:-.01em;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:var(--accent);text-decoration:none}
+img,svg{display:block;max-width:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+.ic{width:1em;height:1em;display:inline-block;vertical-align:-.14em;flex:none}
+:focus{outline:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+::selection{background:color-mix(in srgb,var(--accent) 24%,transparent)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.eyebrow{font-family:var(--font-body);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes halo{0%,100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--danger) 40%,transparent)}50%{box-shadow:0 0 0 8px transparent}}
+
+/* ── buttons ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-body);
+  font-weight:600;font-size:15px;line-height:1;padding:13px 22px;border-radius:var(--radius-pill);
+  border:1.5px solid transparent;text-decoration:none;transition:transform .12s,background .15s,box-shadow .15s}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--accent);color:var(--on-accent);box-shadow:var(--shadow-sm)}
+.btn-primary:hover{box-shadow:var(--shadow-md);color:var(--on-accent)}
+.btn-outline{border-color:var(--border);color:var(--ink);background:transparent}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.btn-danger{background:var(--danger);color:var(--danger-ink)}
+.btn-lg{padding:16px 30px;font-size:16px}
+.btn-ghost{color:var(--accent);padding:10px 12px}
+.btn-ghost:hover{background:var(--accent-tint)}
+
+/* ── nav ── */
+.nav{position:sticky;top:0;z-index:50;height:var(--nav-h);display:flex;align-items:center;
+  background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav .wrap{display:flex;align-items:center;gap:24px;width:100%}
+.logo{display:flex;align-items:center;gap:11px;color:var(--ink)}
+.logo .mark{width:42px;height:auto;flex:none}
+.logo .wm{font-family:var(--font-display);font-weight:600;font-size:22px;letter-spacing:-.02em;line-height:1}
+.logo .wm em{font-style:normal;color:var(--accent-soft)}
+.nav-links{display:flex;align-items:center;gap:26px;margin-left:auto;font-size:15px}
+.nav-links a{color:var(--ink-soft);font-weight:500}
+.nav-links a:hover{color:var(--ink)}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.theme-btn{width:40px;height:40px;border-radius:var(--radius-pill);border:1px solid var(--border);background:transparent;
+  color:var(--ink-soft);display:grid;place-items:center;font-size:18px}
+.theme-btn:hover{color:var(--ink);border-color:var(--accent)}
+.menu-btn{display:none;width:42px;height:42px;border-radius:12px;border:1px solid var(--border);background:transparent;color:var(--ink);place-items:center;font-size:22px}
+
+/* ── hero ── */
+.hero{position:relative;overflow:hidden;padding:70px 0 40px}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:
+    radial-gradient(60% 60% at 82% 8%,color-mix(in srgb,var(--brand-lavender) 26%,transparent),transparent 70%),
+    radial-gradient(50% 50% at 10% 90%,color-mix(in srgb,var(--brand-lavender) 15%,transparent),transparent 70%)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(44px,6.5vw,78px);font-weight:500;letter-spacing:-.025em;margin:20px 0 0}
+.hero h1 .accent{color:var(--accent)}
+.hero .sub{margin-top:22px;font-size:19px;line-height:1.55;color:var(--ink-soft);max-width:34ch}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.trust{margin-top:34px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+.trust .dot{color:var(--accent-soft)}
+
+/* hero card — a real dose-card mock, dogfooding the app's components */
+.hero-visual{display:flex;justify-content:center}
+.showcard{width:100%;max-width:360px;background:var(--surface);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-lg);padding:22px;animation:rise .6s ease both}
+.showcard .top{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.showcard .kiticon{width:40px;height:40px;border-radius:12px;background:var(--accent-tint);display:grid;place-items:center;color:var(--accent);font-size:22px}
+.showcard .kt{font-family:var(--font-display);font-weight:600;font-size:18px}
+.showcard .ks{font-size:12px;color:var(--ink-faint)}
+.showcard .row{display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:var(--radius-sm);background:var(--surface-2);margin-bottom:8px}
+.showcard .row .n{font-weight:600;font-size:14px}.showcard .row .m{font-size:12px;color:var(--ink-faint)}
+.showcard .row .st{margin-left:auto;font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px}
+.st-ok{background:var(--success-tint);color:var(--success)}
+.st-now{background:var(--accent-tint);color:var(--accent)}
+.showcard .watch{margin-top:14px;display:flex;align-items:center;gap:10px;padding:12px;border-radius:var(--radius-sm);
+  background:var(--success-tint);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--success) 30%,transparent)}
+.showcard .watch .t{font-size:22px;font-weight:700;color:var(--success);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.showcard .watch .l{font-size:11px;color:var(--success);opacity:.9;line-height:1.3}
+
+/* ── section scaffold ── */
+section{scroll-margin-top:var(--nav-h)}
+.band{padding:76px 0}
+.sec-head{max-width:44ch;margin:0 auto 44px;text-align:center}
+.sec-head h2{font-size:clamp(30px,4.5vw,44px);font-weight:500;margin-top:12px}
+.sec-head p{margin-top:14px;color:var(--ink-soft);font-size:17px}
+
+/* ── pillars ── */
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.pillar{background:var(--surface);border-radius:var(--radius-md);padding:26px 22px;box-shadow:var(--shadow-sm);
+  text-align:center;transition:transform .15s,box-shadow .15s}
+.pillar:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.pillar .badge{width:58px;height:58px;margin:0 auto 16px;border-radius:var(--radius-pill);
+  background:var(--accent-tint);display:grid;place-items:center;color:var(--accent);font-size:28px}
+.pillar h3{font-size:19px;font-weight:600;margin-bottom:8px}
+.pillar p{font-size:14px;color:var(--ink-soft);line-height:1.5}
+
+/* ── how it works ── */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:step}
+.step{position:relative;padding-top:8px}
+.step .num{counter-increment:step;font-family:var(--font-display);font-size:15px;font-weight:600;
+  width:38px;height:38px;border-radius:var(--radius-pill);background:var(--accent);color:var(--on-accent);
+  display:grid;place-items:center;margin-bottom:16px}
+.step .num::before{content:counter(step)}
+.step h3{font-size:18px;font-weight:600;margin-bottom:8px}
+.step p{font-size:14.5px;color:var(--ink-soft);line-height:1.5}
+.ladder{margin-top:44px;background:var(--surface);border-radius:var(--radius-lg);padding:30px;box-shadow:var(--shadow-sm);
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:24px}
+.ladder .stat .n{font-family:var(--font-display);font-size:40px;font-weight:600;color:var(--accent);line-height:1}
+.ladder .stat .l{font-size:14px;color:var(--ink-soft);margin-top:6px}
+
+/* allergen chips */
+.allergens{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:8px}
+.chip{display:inline-flex;align-items:center;gap:7px;padding:9px 15px;border-radius:var(--radius-pill);
+  background:var(--surface);box-shadow:var(--shadow-sm);font-size:14px;font-weight:500}
+.chip .ic{color:var(--accent);font-size:17px}
+
+/* ── safety band ── */
+.safety{background:var(--danger-tint);border-radius:var(--radius-lg);padding:36px;
+  box-shadow:inset 0 0 0 1px var(--danger-edge);display:flex;gap:24px;align-items:flex-start}
+.safety .sic{width:52px;height:52px;flex:none;border-radius:var(--radius-md);background:var(--danger);color:var(--danger-ink);
+  display:grid;place-items:center;font-size:26px;animation:halo 3.4s ease-in-out infinite}
+.safety h3{font-size:22px;font-weight:600;margin-bottom:8px}
+.safety p{color:var(--ink-soft);font-size:15px;max-width:60ch}
+.safety strong{color:var(--ink)}
+
+/* ── app section ── */
+.app-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.app-copy h2{font-size:clamp(28px,4vw,40px);font-weight:500}
+.app-copy p{margin-top:16px;color:var(--ink-soft);font-size:16.5px}
+.app-list{margin:22px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
+.app-list li{display:flex;gap:11px;font-size:15px}
+.app-list li .ic{color:var(--success);margin-top:3px;font-size:18px}
+.phone{width:100%;max-width:300px;margin:0 auto;aspect-ratio:9/18.5;border-radius:34px;padding:9px;
+  background:var(--navy);box-shadow:var(--shadow-lg)}
+.phone .screen{width:100%;height:100%;border-radius:26px;background:#17182a;overflow:hidden;position:relative;
+  color:#f3efe6;font-size:13px;padding:16px 13px}
+.phone .pnav{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.phone .pmark{width:24px;height:24px;border-radius:7px;background:#3a3560;display:grid;place-items:center}
+.phone .pbar{display:flex;align-items:center;gap:7px;padding:7px 9px;border-radius:9px;margin-bottom:12px;
+  background:rgba(224,133,124,.12);box-shadow:inset 0 0 0 1px rgba(224,133,124,.34);font-size:10.5px;color:#f3d3ce}
+.phone .pcard{background:#24263f;border-radius:12px;padding:13px;margin-bottom:9px}
+.phone .pk{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#b9adf5;margin-bottom:6px}
+.phone .pt{font-size:16px;font-weight:600;font-family:var(--font-display)}
+.phone .pwatch{margin-top:10px;display:flex;align-items:center;gap:8px;padding:9px;border-radius:9px;
+  background:rgba(109,190,151,.14);box-shadow:inset 0 0 0 1px rgba(109,190,151,.3)}
+.phone .pwatch .pv{font-size:17px;font-weight:700;color:#6dbe97;font-variant-numeric:tabular-nums}
+.phone .pwatch .pl{font-size:9px;color:#6dbe97;opacity:.9}
+
+/* ── testimonials ── */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.quote{background:var(--surface);border-radius:var(--radius-md);padding:26px;box-shadow:var(--shadow-sm)}
+.quote p{font-family:var(--font-display);font-size:18px;line-height:1.45;font-weight:400}
+.quote .who{margin-top:18px;display:flex;align-items:center;gap:11px}
+.quote .av{width:40px;height:40px;border-radius:50%;background:var(--accent-tint);color:var(--accent);
+  display:grid;place-items:center;font-weight:700;font-size:15px}
+.quote .who .nm{font-size:14px;font-weight:600}.quote .who .rl{font-size:12.5px;color:var(--ink-faint)}
+.stars{color:var(--caution);font-size:15px;letter-spacing:2px;margin-bottom:12px}
+
+/* ── pricing / order ── */
+.order{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);
+  display:grid;grid-template-columns:1.2fr 1fr;overflow:hidden}
+.order .left{padding:44px}
+.order .right{padding:44px;background:var(--accent);color:var(--on-accent);display:flex;flex-direction:column;justify-content:center}
+.order h2{font-size:32px;font-weight:500;margin-bottom:12px}
+.order .incl{margin:20px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:11px}
+.order .incl li{display:flex;gap:10px;font-size:15px;color:var(--ink-soft)}
+.order .incl .ic{color:var(--success);font-size:18px;margin-top:2px}
+.order .price{font-family:var(--font-display);font-size:52px;font-weight:600;line-height:1}
+.order .price small{font-size:16px;font-weight:500;opacity:.85}
+.order .right p{opacity:.9;font-size:14px;margin-top:8px}
+.order .right .btn{margin-top:22px;background:var(--on-accent);color:var(--accent)}
+.order .note{margin-top:14px;font-size:12.5px;opacity:.85}
+
+/* ── FAQ ── */
+.faq{max-width:760px;margin:0 auto}
+.q{border-bottom:1px solid var(--border)}
+.q button{width:100%;display:flex;align-items:center;gap:16px;padding:22px 4px;text-align:left;background:none;border:0;
+  font-family:var(--font-display);font-size:19px;font-weight:500;color:var(--ink)}
+.q button .ico{margin-left:auto;color:var(--accent);font-size:22px;transition:transform .2s;flex:none}
+.q.open button .ico{transform:rotate(45deg)}
+.q .a{max-height:0;overflow:hidden;transition:max-height .25s ease}
+.q .a p{padding:0 4px 22px;color:var(--ink-soft);font-size:15.5px;max-width:64ch}
+
+/* ── footer ── */
+.footstrip{text-align:center;padding:30px 0;font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-faint);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.footstrip .dot{color:var(--accent-soft)}
+footer{padding:56px 0 40px}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.foot-grid h4{font-family:var(--font-body);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:14px}
+.foot-grid a{display:block;color:var(--ink-soft);font-size:14.5px;padding:5px 0}
+.foot-grid a:hover{color:var(--accent)}
+.foot-blurb{font-size:14px;color:var(--ink-soft);max-width:34ch;margin-top:14px;line-height:1.55}
+.disclaimer{border-radius:var(--radius-md);background:var(--surface);padding:18px 22px;font-size:13px;color:var(--ink-soft);
+  box-shadow:var(--shadow-sm);line-height:1.55}
+.disclaimer strong{color:var(--ink)}
+.copyright{margin-top:24px;font-size:13px;color:var(--ink-faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+/* ── mobile drawer ── */
+.drawer{position:fixed;inset:var(--nav-h) 0 0;z-index:45;background:var(--bg);padding:24px;display:none;flex-direction:column;gap:6px}
+.drawer.open{display:flex;animation:rise .2s ease}
+.drawer a{font-family:var(--font-display);font-size:24px;font-weight:500;color:var(--ink);padding:12px 0;border-bottom:1px solid var(--border)}
+.drawer .btn{margin-top:16px}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .hero .sub{max-width:none}
+  .hero-visual{order:-1}
+  .pillars{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .app-grid{grid-template-columns:1fr;gap:36px}
+  .app-phone{order:-1}
+  .quotes{grid-template-columns:1fr}
+  .order{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:680px){
+  .nav-links{display:none}
+  .menu-btn{display:grid}
+  .band{padding:56px 0}
+  .pillars,.steps{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .safety{flex-direction:column;gap:16px}
+  .trust{gap:10px}
+}
+</style>
+</head>
+<body>
+
+<!-- ░░ icon sprite ░░ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C5 11 11 5 19 5c0 8-6 14-14 14z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M5 19c4-6 8-8 12-9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.6-9.3-9C1.3 8 2.7 4.7 6 4.7c2 0 3.2 1.3 4 2.6.8-1.3 2-2.6 4-2.6 3.3 0 4.7 3.3 3.3 6.3C19 15.4 12 20 12 20z" fill="currentColor"/></symbol>
+<symbol id="i-baby" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="9.5" cy="9" r="1" fill="currentColor"/><circle cx="14.5" cy="9" r="1" fill="currentColor"/><path d="M9.7 11.6c1.3 1 3.3 1 4.6 0" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M12 3.2v-1M8 16c1 2 7 2 8 0" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+<symbol id="i-hands" viewBox="0 0 24 24"><path d="M12 8.5c-.9-1.2-3-1.4-3.6.4-.5 1.6 1.4 3 3.6 4.6 2.2-1.6 4.1-3 3.6-4.6-.6-1.8-2.7-1.6-3.6-.4z" fill="currentColor"/><path d="M4 14l3.5 3.5a4 4 0 002.8 1.2H16a3 3 0 003-3v-1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 13l-3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4 4 10-10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8.5 12.2l2.3 2.3 4.7-4.9" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="i-warning" viewBox="0 0 24 24"><path d="M12 3.5L21.5 20H2.5L12 3.5z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 9.5v4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="17" r="1.1" fill="currentColor"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M11 18h2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M5 4h9a2 2 0 012 2v14H7a2 2 0 01-2-2V4z" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M9 8h5M9 12h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+<symbol id="i-egg" viewBox="0 0 24 24"><path d="M12 3.5c3.3 0 6 4.7 6 8.7a6 6 0 11-12 0c0-4 2.7-8.7 6-8.7z" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+<symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3.5c3 4 5.5 6.8 5.5 9.5a5.5 5.5 0 11-11 0C6.5 10.3 9 7.5 12 3.5z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+<symbol id="i-fish" viewBox="0 0 24 24"><path d="M4 12c3-4 9-5 13-3 2 1 3 2 3 3s-1 2-3 3c-4 2-10 1-13-3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M20 12l2-2v4l-2-2z" fill="currentColor"/></symbol>
+<symbol id="i-grain" viewBox="0 0 24 24"><path d="M12 3v18M12 6c-2 0-4 1.5-4 3.5S10 13 12 13m0-7c2 0 4 1.5 4 3.5S14 13 12 13m0 0c-2 0-4 1.5-4 3.5S10 20 12 20m0-7c2 0 4 1.5 4 3.5S14 20 12 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.4 1.4M17.6 17.6L19 19M19 5l-1.4 1.4M6.4 17.6L5 19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 019.5 4 8 8 0 1020 14.5z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</defs></svg>
+
+<!-- inline mark markup reused via <template> -->
+<template id="markTpl">
+<svg class="mark" viewBox="0 0 148 72" aria-hidden="true">
+  <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="40" cy="36" rx="11" ry="8.5"/>
+    <path d="M50 32 C 70 25, 84 26, 96 32"/>
+    <path d="M50 40 C 70 47, 84 46, 96 40"/>
+    <ellipse cx="116" cy="36" rx="18" ry="13"/>
+  </g>
+  <path d="M116 41 C 112 37.5, 109 35.5, 109 32.8 C 109 31, 110.4 30, 111.8 30 C 113 30, 114 30.7, 116 32.6 C 118 30.7, 119 30, 120.2 30 C 121.6 30, 123 31, 123 32.8 C 123 35.5, 120 37.5, 116 41 Z" fill="currentColor"/>
+  <g fill="var(--brand-lavender)">
+    <path d="M56 34 C 42 18, 24 20, 30 34 C 24 48, 42 50, 56 34 Z"/>
+    <path d="M56 34 C 70 18, 88 20, 82 34 C 88 48, 70 50, 56 34 Z"/>
+    <path d="M52 37 L 45 58 L 54 48 L 63 58 L 60 37 Z"/>
+  </g>
+  <ellipse cx="56" cy="34.5" rx="5" ry="7" fill="var(--brand-lavender-deep)"/>
+</svg>
+</template>
+
+<!-- ░░ NAV ░░ -->
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Bows and Spoons home">
+      <span class="mark-slot"></span>
+      <span class="wm">bows <em>and</em> spoons</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#pillars">Why it works</a>
+      <a href="#how">How it works</a>
+      <a href="#app">The app</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle light and dark"><svg class="ic"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-primary" href="#order">Get the kit</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu"><svg class="ic"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer">
+  <a href="#pillars">Why it works</a>
+  <a href="#how">How it works</a>
+  <a href="#app">The app</a>
+  <a href="#faq">FAQ</a>
+  <a class="btn btn-primary btn-lg" href="#order">Get the kit</a>
+</div>
+
+<main id="top">
+  <!-- ░░ HERO ░░ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">Allergen Introduction Kit for Infants</div>
+        <h1>First bites.<br><span class="accent">Big steps.</span></h1>
+        <p class="sub">A gentle, science-backed way to introduce the top food allergens to your baby at home — one small, guided spoonful at a time.</p>
+        <div class="cta">
+          <a class="btn btn-primary btn-lg" href="#order">Order your kit <svg class="ic"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-outline btn-lg" href="#how">How it works</a>
+        </div>
+        <div class="trust">
+          Healthier beginnings <span class="dot">♥</span> Happier families <span class="dot">♥</span> Stronger communities
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="showcard">
+          <div class="top">
+            <div class="kiticon"><svg class="ic"><use href="#i-egg"/></svg></div>
+            <div><div class="kt">Today · Day 12</div><div class="ks">Egg — dose 2 of 3</div></div>
+          </div>
+          <div class="row"><span class="n">Peanut</span><span class="m">· days 1–3</span><span class="st st-ok">Tolerated</span></div>
+          <div class="row"><span class="n">Egg</span><span class="m">· ¼ teaspoon</span><span class="st st-now">Today</span></div>
+          <div class="row"><span class="n">Cow's milk</span><span class="m">· days 16–18</span><span class="st" style="color:var(--ink-faint)">Upcoming</span></div>
+          <div class="watch">
+            <svg class="ic" style="color:var(--success);font-size:20px"><use href="#i-clock"/></svg>
+            <div class="t" id="heroTimer">2:00:00</div>
+            <div class="l">Watch window<br>clear so far</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ PILLARS ░░ -->
+  <section class="band" id="pillars">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Why parents choose us</div>
+        <h2>Built to be gentle, safe, and for everyone</h2>
+      </div>
+      <div class="pillars">
+        <div class="pillar"><div class="badge"><svg class="ic"><use href="#i-leaf"/></svg></div><h3>Safe &amp; science-backed</h3><p>Built on the early-introduction evidence that guides today's pediatric allergy care.</p></div>
+        <div class="pillar"><div class="badge"><svg class="ic"><use href="#i-heart"/></svg></div><h3>Parent approved</h3><p>Plain-language steps, clear doses, and reassurance at every stage — no guesswork.</p></div>
+        <div class="pillar"><div class="badge"><svg class="ic"><use href="#i-baby"/></svg></div><h3>Gentle introductions</h3><p>Tiny, measured amounts on a steady ladder, paced for a first-year tummy.</p></div>
+        <div class="pillar"><div class="badge"><svg class="ic"><use href="#i-hands"/></svg></div><h3>Access for all</h3><p>Designed to be affordable and understandable for every family, everywhere.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ HOW IT WORKS ░░ -->
+  <section class="band" id="how" style="background:var(--surface-2)">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">How it works</div>
+        <h2>Four calm steps, from kit to confidence</h2>
+        <p>Activate your kit, follow the daily ladder in the app, watch each first bite, and bring a clear record to your pediatrician.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="num"></div><h3>Activate your kit</h3><p>Scan the serial, add your baby's profile, and set your first pediatric contact.</p></div>
+        <div class="step"><div class="num"></div><h3>Follow the daily ladder</h3><p>Each day the app shows the exact food and dose — no measuring math to get wrong.</p></div>
+        <div class="step"><div class="num"></div><h3>Watch &amp; log</h3><p>A two-hour watch-window timer runs while you note anything you see, with photos.</p></div>
+        <div class="step"><div class="num"></div><h3>Share with your clinician</h3><p>Export a tidy summary for visits. Their instructions always come first.</p></div>
+      </div>
+
+      <div class="ladder">
+        <div class="stat"><div class="n">8</div><div class="l">Top allergens, introduced in order</div></div>
+        <div class="stat"><div class="n">24</div><div class="l">Guided days on the introduction ladder</div></div>
+        <div class="stat"><div class="n">3</div><div class="l">Small doses per allergen, stepping up</div></div>
+        <div class="stat"><div class="n">2 hr</div><div class="l">Watch window after every first bite</div></div>
+      </div>
+
+      <div class="allergens">
+        <span class="chip"><svg class="ic"><use href="#i-drop"/></svg>Peanut</span>
+        <span class="chip"><svg class="ic"><use href="#i-egg"/></svg>Egg</span>
+        <span class="chip"><svg class="ic"><use href="#i-drop"/></svg>Cow's milk</span>
+        <span class="chip"><svg class="ic"><use href="#i-grain"/></svg>Wheat</span>
+        <span class="chip"><svg class="ic"><use href="#i-leaf"/></svg>Soy</span>
+        <span class="chip"><svg class="ic"><use href="#i-fish"/></svg>Fish</span>
+        <span class="chip"><svg class="ic"><use href="#i-leaf"/></svg>Tree nut</span>
+        <span class="chip"><svg class="ic"><use href="#i-fish"/></svg>Sesame</span>
+      </div>
+      <p style="text-align:center;font-size:13px;color:var(--ink-faint);margin-top:16px">Allergen list and dosing are illustrative — your kit ships with the current clinical protocol.</p>
+    </div>
+  </section>
+
+  <!-- ░░ SAFETY ░░ -->
+  <section class="band" id="safety">
+    <div class="wrap">
+      <div class="safety">
+        <div class="sic"><svg class="ic"><use href="#i-warning"/></svg></div>
+        <div>
+          <h3>Safety comes first — always</h3>
+          <p><strong>Bows and Spoons is a companion, not a medical device.</strong> It does not diagnose allergy, and it never replaces your clinician's advice. The app keeps a one-tap emergency plan and a 911 dial on every screen. If your baby has trouble breathing, swelling lips or tongue, goes pale or floppy, or vomits repeatedly — <strong>call 911 now.</strong> Talk with your pediatrician before you begin.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ APP ░░ -->
+  <section class="band" id="app" style="background:var(--surface-2)">
+    <div class="wrap app-grid">
+      <div class="app-copy">
+        <div class="eyebrow">The companion app</div>
+        <h2>Your daily guide, right in your pocket</h2>
+        <p>The kit comes with the First Bites app — the calm, focused interface that turns the protocol into one clear action a day.</p>
+        <ul class="app-list">
+          <li><svg class="ic"><use href="#i-check-circle"/></svg>Today's exact food and dose, in a focus card or a checklist.</li>
+          <li><svg class="ic"><use href="#i-check-circle"/></svg>A live two-hour watch-window timer after every bite.</li>
+          <li><svg class="ic"><use href="#i-check-circle"/></svg>Symptom logging with severity guidance and photos.</li>
+          <li><svg class="ic"><use href="#i-check-circle"/></svg>Growth, visits, and emergency contacts one tap away.</li>
+        </ul>
+        <div class="cta" style="margin-top:26px">
+          <a class="btn btn-primary" href="#order">Get the kit &amp; app</a>
+          <a class="btn btn-ghost" href="#how">See the protocol <svg class="ic"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+      <div class="app-phone">
+        <div class="phone"><div class="screen">
+          <div class="pnav"><span class="pmark"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b9adf5" stroke-width="1.8" stroke-linecap="round"><ellipse cx="12" cy="4.9" rx="2.5" ry="3.4"/><ellipse cx="6.4" cy="15.4" rx="4.1" ry="1.35" transform="rotate(-12 6.4 15.4)"/><ellipse cx="17.6" cy="15.4" rx="4.1" ry="1.35" transform="rotate(12 17.6 15.4)"/><path d="M12 8.3V21.5" stroke-width="2.2"/></svg></span><strong style="font-size:12px">First Bites</strong><span style="margin-left:auto;font-size:9px;color:#8b8fb0">Kit&nbsp;#4B-2291</span></div>
+          <div class="pbar"><svg class="ic" style="color:#e0857c;font-size:12px"><use href="#i-warning"/></svg>Reaction plan · <strong style="color:#f3d3ce">911</strong></div>
+          <div class="pcard">
+            <div class="pk">Today · Day 12</div>
+            <div class="pt">Egg — dose 2 of 3</div>
+            <div style="font-size:11px;color:#9a9ec0;margin-top:3px">¼ teaspoon, mixed into a familiar food</div>
+            <div class="pwatch"><svg class="ic" style="color:#6dbe97;font-size:16px"><use href="#i-clock"/></svg><div class="pv" id="phoneTimer">1:47:20</div><div class="pl">Watch window<br>clear so far</div></div>
+          </div>
+          <div class="pcard" style="display:flex;align-items:center;gap:8px"><svg class="ic" style="color:#6dbe97;font-size:15px"><use href="#i-check-circle"/></svg><span style="font-size:12px">Peanut · tolerated</span><span style="margin-left:auto;font-size:10px;color:#8b8fb0">days 1–3</span></div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ TESTIMONIALS ░░ -->
+  <section class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">From our families</div>
+        <h2>Calmer first bites, together</h2>
+        <p>Early feedback from parents in our pilot program. Individual experiences vary.</p>
+      </div>
+      <div class="quotes">
+        <div class="quote"><div class="stars">★★★★★</div><p>“The timer took the panic out of it. I knew exactly what to do and when to relax.”</p><div class="who"><div class="av">RA</div><div><div class="nm">Rosa A.</div><div class="rl">Parent of a 7-month-old</div></div></div></div>
+        <div class="quote"><div class="stars">★★★★★</div><p>“One food, one dose, one clear screen. Our pediatrician loved the summary I brought in.”</p><div class="who"><div class="av">JD</div><div><div class="nm">Jordan D.</div><div class="rl">Parent of twins</div></div></div></div>
+        <div class="quote"><div class="stars">★★★★★</div><p>“It felt gentle and unhurried — exactly what a nervous first-time parent needs.”</p><div class="who"><div class="av">MK</div><div><div class="nm">Mei K.</div><div class="rl">First-time parent</div></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ ORDER ░░ -->
+  <section class="band" id="order">
+    <div class="wrap">
+      <div class="order">
+        <div class="left">
+          <div class="eyebrow">The First Bites kit</div>
+          <h2>Everything for a confident start</h2>
+          <p style="color:var(--ink-soft);font-size:15px">One box, one app, one calm plan through the whole introduction window.</p>
+          <ul class="incl">
+            <li><svg class="ic"><use href="#i-check"/></svg>Pre-measured allergen portions for the full ladder</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Guided daily protocol in the First Bites app</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Watch-window timer, symptom log &amp; visit summaries</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Printed emergency action plan for your fridge</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>Free updates as the clinical protocol evolves</li>
+          </ul>
+        </div>
+        <div class="right">
+          <div class="price">$149<small> / kit</small></div>
+          <p>One-time purchase. Free shipping. 30-day happiness guarantee.</p>
+          <a class="btn btn-lg" href="#" onclick="return false" data-order>Reserve your kit <svg class="ic"><use href="#i-arrow"/></svg></a>
+          <p class="note">Talk with your pediatrician before starting any allergen introduction.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ FAQ ░░ -->
+  <section class="band" id="faq" style="background:var(--surface-2)">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Questions</div>
+        <h2>Good things to ask first</h2>
+      </div>
+      <div class="faq">
+        <div class="q"><button aria-expanded="false"><span>When can we start?</span><svg class="ic ico"><use href="#i-plus"/></svg></button><div class="a"><p>Most guidance supports introducing common allergens around 4–6 months, once your baby is developmentally ready for solids. Always confirm timing with your pediatrician first — especially if there's eczema, an existing food allergy, or a family history.</p></div></div>
+        <div class="q"><button aria-expanded="false"><span>Is this a medical device or a diagnosis?</span><svg class="ic ico"><use href="#i-plus"/></svg></button><div class="a"><p>No. Bows and Spoons is an educational companion that helps you follow an introduction plan and keep good records. It does not diagnose allergy and does not replace medical care. Your clinician's instructions always take precedence.</p></div></div>
+        <div class="q"><button aria-expanded="false"><span>What if my baby reacts?</span><svg class="ic ico"><use href="#i-plus"/></svg></button><div class="a"><p>The app keeps a reaction plan and a 911 dial on every screen, with severity-specific guidance. For any severe signs — trouble breathing, swelling, pallor, or repeated vomiting — call 911 immediately. Log milder symptoms and review them with your pediatrician.</p></div></div>
+        <div class="q"><button aria-expanded="false"><span>Which allergens are included?</span><svg class="ic ico"><use href="#i-plus"/></svg></button><div class="a"><p>The kit steps through the most common infant allergens on a guided ladder. The exact list and dosing ship with your kit and reflect the current clinical protocol, so they stay up to date.</p></div></div>
+        <div class="q"><button aria-expanded="false"><span>Do we need the app?</span><svg class="ic ico"><use href="#i-plus"/></svg></button><div class="a"><p>The app is where the daily plan, watch-window timer, and logging live, so it's the heart of the experience. The printed emergency action plan works on its own for the fridge.</p></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ░░ FOOTER ░░ -->
+<div class="footstrip">Healthier beginnings <span class="dot">♥</span> Happier families <span class="dot">♥</span> Stronger communities</div>
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="#top" aria-label="Bows and Spoons"><span class="mark-slot"></span><span class="wm">bows <em>and</em> spoons</span></a>
+        <p class="foot-blurb">First Bites. Big Steps.™ A gentle, science-backed allergen introduction kit for infants.</p>
+      </div>
+      <div><h4>Product</h4><a href="#pillars">Why it works</a><a href="#how">How it works</a><a href="#app">The app</a><a href="#order">Get the kit</a></div>
+      <div><h4>Company</h4><a href="#faq">FAQ</a><a href="#safety">Safety</a><a href="#" onclick="return false">Contact</a><a href="#" onclick="return false">Privacy</a></div>
+    </div>
+    <div class="disclaimer">
+      <strong>Not a medical device.</strong> Bows and Spoons First Bites does not diagnose allergy and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the guidance of your pediatrician or qualified health provider before introducing allergens, and with any questions about your child's health. In an emergency, call 911.
+    </div>
+    <div class="copyright">
+      <span>© <span id="year"></span> Bows and Spoons. All rights reserved.</span>
+      <span>First Bites. Big Steps.™</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var $=function(s,r){return (r||document).querySelector(s)};
+  var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+
+  /* inject the logo mark into every slot */
+  var tpl=$('#markTpl');
+  $$('.mark-slot').forEach(function(slot){slot.appendChild(tpl.content.cloneNode(true))});
+
+  /* theme: default follows OS; toggle persists in localStorage */
+  var root=document.documentElement, tb=$('#themeBtn');
+  function stored(){try{return localStorage.getItem('bs-theme')}catch(e){return null}}
+  function applied(t){
+    if(t==='light'||t==='dark'){root.setAttribute('data-theme',t);}
+    else{root.removeAttribute('data-theme');}
+    var dark = t==='dark' || (t!=='light' && window.matchMedia('(prefers-color-scheme:dark)').matches);
+    tb.innerHTML = '<svg class="ic"><use href="#'+(dark?'i-sun':'i-moon')+'"/></svg>';
+  }
+  applied(stored());
+  tb.addEventListener('click',function(){
+    var cur = root.getAttribute('data-theme');
+    var isDark = cur==='dark' || (!cur && window.matchMedia('(prefers-color-scheme:dark)').matches);
+    var next = isDark ? 'light':'dark';
+    try{localStorage.setItem('bs-theme',next)}catch(e){}
+    applied(next);
+  });
+
+  /* mobile drawer */
+  var drawer=$('#drawer'), mb=$('#menuBtn');
+  mb.addEventListener('click',function(){drawer.classList.toggle('open')});
+  $$('#drawer a').forEach(function(a){a.addEventListener('click',function(){drawer.classList.remove('open')})});
+
+  /* FAQ accordion */
+  $$('.q button').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var q=btn.closest('.q'), a=q.querySelector('.a'), open=q.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open?'true':'false');
+      a.style.maxHeight = open ? a.scrollHeight+'px' : '0';
+    });
+  });
+
+  /* order CTA (demo) */
+  $$('[data-order]').forEach(function(b){b.addEventListener('click',function(){
+    b.textContent='Thanks — we’ll be in touch ♥';
+  })});
+
+  /* live watch-window timers */
+  function countdown(el, start){
+    if(!el) return; var s=start;
+    setInterval(function(){
+      s--; if(s<0) s=2*3600;
+      var h=Math.floor(s/3600),m=Math.floor((s%3600)/60),x=s%60;
+      el.textContent=h+':'+String(m).padStart(2,'0')+':'+String(x).padStart(2,'0');
+    },1000);
+  }
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(!reduce){countdown($('#heroTimer'),2*3600);countdown($('#phoneTimer'),1*3600+47*60+20);}
+
+  $('#year').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   Bows and Spoons — brand tokens
+   The design language of the client website, extending the First Bites design
+   system (github.com/JeffTrakk/bows-spoonsFirstBites, design-system/) into the
+   brand's cream + navy world with the lavender accent and the bow-spoon mark.
+
+   Light (cream) is the default. Dark (navy) mirrors the brand sheet and is
+   reached by the OS preference or an explicit [data-theme] on <html>.
+   These are the same tokens inlined at the top of index.html — kept here as a
+   standalone reference for anyone building more pages.
+   ══════════════════════════════════════════════════════════════════════ */
+
+:root{
+  /* Brand constants — the two grounds, the ink, the lavender */
+  --cream:#f6f1e8;        /* light ground        */
+  --cream-2:#fffdf9;      /* light surface       */
+  --navy:#1b1c2e;         /* dark ground / ink   */
+  --navy-2:#24263f;       /* dark surface        */
+  --brand-lavender:#a99cdb;      /* the bow            */
+  --brand-lavender-deep:#8577c2; /* the knot           */
+
+  /* Semantic roles — LIGHT (default) */
+  --bg:var(--cream);
+  --surface:var(--cream-2);
+  --surface-2:#f0e9db;
+  --ink:#1b1c2e;
+  --ink-soft:color-mix(in srgb,#1b1c2e 66%,transparent);
+  --ink-faint:color-mix(in srgb,#1b1c2e 46%,transparent);
+  --border:color-mix(in srgb,#1b1c2e 12%,transparent);
+  --accent:#6a5cb0;                                   /* lavender tuned for text/interaction on cream */
+  --accent-soft:#a99cdb;
+  --accent-tint:color-mix(in srgb,#6a5cb0 10%,transparent);
+  --on-accent:#fffdf9;
+
+  /* Health-status semantics — carried from the First Bites design system */
+  --success:#3f9b6e; --success-tint:color-mix(in srgb,#3f9b6e 14%,transparent);
+  --caution:#c1843a; --caution-tint:color-mix(in srgb,#c1843a 15%,transparent);
+  --danger:#c85a50;  --danger-ink:#fff;
+  --danger-tint:color-mix(in srgb,#c85a50 12%,transparent);
+  --danger-edge:color-mix(in srgb,#c85a50 34%,transparent);
+
+  /* Type */
+  --font-display:"Fraunces",Georgia,"Times New Roman",serif;
+  --font-body:"Inter",system-ui,-apple-system,sans-serif;
+
+  /* Shape & elevation */
+  --radius-sm:8px; --radius-md:14px; --radius-lg:22px; --radius-pill:999px;
+  --shadow-sm:0 1px 2px rgba(27,28,46,.06),0 0 0 1px rgba(27,28,46,.05);
+  --shadow-md:0 8px 24px rgba(27,28,46,.10),0 0 0 1px rgba(27,28,46,.05);
+  --shadow-lg:0 24px 60px rgba(27,28,46,.16),0 0 0 1px rgba(27,28,46,.05);
+
+  color-scheme:light;
+}
+
+/* DARK — via OS preference, unless an explicit light theme is set */
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:var(--navy); --surface:var(--navy-2); --surface-2:#2c2e4a;
+    --ink:#f3efe6;
+    --ink-soft:color-mix(in srgb,#f3efe6 70%,transparent);
+    --ink-faint:color-mix(in srgb,#f3efe6 48%,transparent);
+    --border:color-mix(in srgb,#f3efe6 15%,transparent);
+    --accent:#b9adf5; --accent-soft:#a99cdb;
+    --accent-tint:color-mix(in srgb,#b9adf5 15%,transparent);
+    --on-accent:#1b1c2e;
+    --success:#6dbe97; --success-tint:color-mix(in srgb,#6dbe97 15%,transparent);
+    --caution:#e6c48d; --caution-tint:color-mix(in srgb,#e6c48d 15%,transparent);
+    --danger:#e0857c;  --danger-ink:#1b1015;
+    --danger-tint:color-mix(in srgb,#e0857c 13%,transparent);
+    --danger-edge:color-mix(in srgb,#e0857c 36%,transparent);
+    --shadow-sm:0 0 0 1px rgba(243,239,230,.08);
+    --shadow-md:0 0 0 1px rgba(243,239,230,.10),0 8px 24px rgba(0,0,0,.5);
+    --shadow-lg:0 0 0 1px rgba(243,239,230,.14),0 24px 60px rgba(0,0,0,.6);
+    color-scheme:dark;
+  }
+}
+
+/* DARK — via explicit toggle, wins in both directions */
+:root[data-theme="dark"]{
+  --bg:var(--navy); --surface:var(--navy-2); --surface-2:#2c2e4a;
+  --ink:#f3efe6;
+  --ink-soft:color-mix(in srgb,#f3efe6 70%,transparent);
+  --ink-faint:color-mix(in srgb,#f3efe6 48%,transparent);
+  --border:color-mix(in srgb,#f3efe6 15%,transparent);
+  --accent:#b9adf5; --accent-soft:#a99cdb;
+  --accent-tint:color-mix(in srgb,#b9adf5 15%,transparent);
+  --on-accent:#1b1c2e;
+  --success:#6dbe97; --success-tint:color-mix(in srgb,#6dbe97 15%,transparent);
+  --caution:#e6c48d; --caution-tint:color-mix(in srgb,#e6c48d 15%,transparent);
+  --danger:#e0857c;  --danger-ink:#1b1015;
+  --danger-tint:color-mix(in srgb,#e0857c 13%,transparent);
+  --danger-edge:color-mix(in srgb,#e0857c 36%,transparent);
+  --shadow-sm:0 0 0 1px rgba(243,239,230,.08);
+  --shadow-md:0 0 0 1px rgba(243,239,230,.10),0 8px 24px rgba(0,0,0,.5);
+  --shadow-lg:0 0 0 1px rgba(243,239,230,.14),0 24px 60px rgba(0,0,0,.6);
+  color-scheme:dark;
+}

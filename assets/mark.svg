@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 72" role="img" aria-label="Bows and Spoons mark">
+  <!-- Spoon: drawn in the ink colour (currentColor). Bow: lavender. -->
+  <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- handle end curl (left) -->
+    <ellipse cx="40" cy="36" rx="11" ry="8.5"/>
+    <!-- handle -->
+    <path d="M50 32 C 70 25, 84 26, 96 32"/>
+    <path d="M50 40 C 70 47, 84 46, 96 40"/>
+    <!-- bowl (right) -->
+    <ellipse cx="116" cy="36" rx="18" ry="13"/>
+  </g>
+  <!-- heart in the bowl -->
+  <path d="M116 41 C 112 37.5, 109 35.5, 109 32.8 C 109 31, 110.4 30, 111.8 30 C 113 30, 114 30.7, 116 32.6 C 118 30.7, 119 30, 120.2 30 C 121.6 30, 123 31, 123 32.8 C 123 35.5, 120 37.5, 116 41 Z" fill="currentColor"/>
+  <!-- bow, lavender -->
+  <g fill="var(--brand-lavender, #a99cdb)">
+    <!-- left loop -->
+    <path d="M56 34 C 42 18, 24 20, 30 34 C 24 48, 42 50, 56 34 Z"/>
+    <!-- right loop -->
+    <path d="M56 34 C 70 18, 88 20, 82 34 C 88 48, 70 50, 56 34 Z"/>
+    <!-- tails -->
+    <path d="M52 37 L 45 58 L 54 48 L 63 58 L 60 37 Z"/>
+  </g>
+  <!-- knot, deeper lavender -->
+  <ellipse cx="56" cy="34.5" rx="5" ry="7" fill="var(--brand-lavender-deep, #8577c2)"/>
+</svg>
