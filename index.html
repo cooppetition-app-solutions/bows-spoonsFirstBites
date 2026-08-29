@@ -11,7 +11,10 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23a99cdb'/%3E%3Cg fill='none' stroke='%23fff' stroke-width='1.7' stroke-linecap='round'%3E%3Cellipse cx='11' cy='17' rx='3.2' ry='2.5'/%3E%3Cpath d='M14 15.5c3-1 5-1 7 0'/%3E%3Cpath d='M14 18.5c3 1 5 1 7 0'/%3E%3Cellipse cx='23' cy='17' rx='4' ry='3'/%3E%3C/g%3E%3Cpath d='M15 15c-3-3-6-2.5-4.5.5c-1.5 3 1.5 3.5 4.5.5z' fill='%23fff'/%3E%3Cpath d='M15 15c3-3 6-2.5 4.5.5c1.5 3-1.5 3.5-4.5.5z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/svg+xml" href="assets/favicon-dark.svg" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/favicon.svg">
 <style>
 /* ══════════════════════════════════════════════════════════════════
    Bows and Spoons — brand tokens (also in brand-tokens.css)
@@ -119,7 +122,7 @@ button{font:inherit;color:inherit;cursor:pointer}
   background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 .nav .wrap{display:flex;align-items:center;gap:24px;width:100%}
 .logo{display:flex;align-items:center;gap:11px;color:var(--ink)}
-.logo .mark{width:42px;height:auto;flex:none}
+.logo .mark{width:48px;height:auto;flex:none}
 .logo .wm{font-family:var(--font-display);font-weight:600;font-size:22px;letter-spacing:-.02em;line-height:1}
 .logo .wm em{font-style:normal;color:var(--accent-soft)}
 .nav-links{display:flex;align-items:center;gap:26px;margin-left:auto;font-size:15px}
@@ -340,20 +343,19 @@ footer{padding:56px 0 40px}
 
 <!-- inline mark markup reused via <template> -->
 <template id="markTpl">
-<svg class="mark" viewBox="0 0 148 72" aria-hidden="true">
-  <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-    <ellipse cx="40" cy="36" rx="11" ry="8.5"/>
-    <path d="M50 32 C 70 25, 84 26, 96 32"/>
-    <path d="M50 40 C 70 47, 84 46, 96 40"/>
-    <ellipse cx="116" cy="36" rx="18" ry="13"/>
+<svg class="mark" viewBox="0 0 210 108" aria-hidden="true">
+  <g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="166" cy="52" rx="22" ry="16" transform="rotate(-9 166 52)"/>
+    <path d="M144 55 C 118 66, 88 64, 68 54"/>
+    <path d="M68 54 C 54 48, 46 41, 52 35 C 58 29, 70 35, 66 46"/>
   </g>
-  <path d="M116 41 C 112 37.5, 109 35.5, 109 32.8 C 109 31, 110.4 30, 111.8 30 C 113 30, 114 30.7, 116 32.6 C 118 30.7, 119 30, 120.2 30 C 121.6 30, 123 31, 123 32.8 C 123 35.5, 120 37.5, 116 41 Z" fill="currentColor"/>
+  <path d="M176 45 C 172 41.5 169 39.6 169 37 C 169 35.3 170.3 34.4 171.6 34.4 C 172.8 34.4 173.8 35 176 37 C 178.2 35 179.2 34.4 180.4 34.4 C 181.7 34.4 183 35.3 183 37 C 183 39.6 180 41.5 176 45 Z" fill="currentColor"/>
   <g fill="var(--brand-lavender)">
-    <path d="M56 34 C 42 18, 24 20, 30 34 C 24 48, 42 50, 56 34 Z"/>
-    <path d="M56 34 C 70 18, 88 20, 82 34 C 88 48, 70 50, 56 34 Z"/>
-    <path d="M52 37 L 45 58 L 54 48 L 63 58 L 60 37 Z"/>
+    <path d="M90 49 C 68 21, 40 27, 55 49 C 44 63, 76 65, 90 49 Z"/>
+    <path d="M90 49 C 110 23, 135 28, 122 49 C 133 62, 104 64, 90 49 Z"/>
+    <path d="M85 52 L 74 92 L 85 81 L 96 94 L 92 52 Z"/>
   </g>
-  <ellipse cx="56" cy="34.5" rx="5" ry="7" fill="var(--brand-lavender-deep)"/>
+  <rect x="82" y="41" width="15" height="19" rx="6" fill="var(--brand-lavender-deep)"/>
 </svg>
 </template>
 

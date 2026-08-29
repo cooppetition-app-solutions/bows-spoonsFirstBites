@@ -1,25 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 72" role="img" aria-label="Bows and Spoons mark">
-  <!-- Spoon: drawn in the ink colour (currentColor). Bow: lavender. -->
-  <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-    <!-- handle end curl (left) -->
-    <ellipse cx="40" cy="36" rx="11" ry="8.5"/>
-    <!-- handle -->
-    <path d="M50 32 C 70 25, 84 26, 96 32"/>
-    <path d="M50 40 C 70 47, 84 46, 96 40"/>
-    <!-- bowl (right) -->
-    <ellipse cx="116" cy="36" rx="18" ry="13"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 108" role="img" aria-label="Bows and Spoons mark">
+  <!-- Spoon + heart take the ink colour (currentColor); the bow is lavender. -->
+  <g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="166" cy="52" rx="22" ry="16" transform="rotate(-9 166 52)"/>
+    <path d="M144 55 C 118 66, 88 64, 68 54"/>
+    <path d="M68 54 C 54 48, 46 41, 52 35 C 58 29, 70 35, 66 46"/>
   </g>
-  <!-- heart in the bowl -->
-  <path d="M116 41 C 112 37.5, 109 35.5, 109 32.8 C 109 31, 110.4 30, 111.8 30 C 113 30, 114 30.7, 116 32.6 C 118 30.7, 119 30, 120.2 30 C 121.6 30, 123 31, 123 32.8 C 123 35.5, 120 37.5, 116 41 Z" fill="currentColor"/>
-  <!-- bow, lavender -->
+  <path d="M176 45 C 172 41.5 169 39.6 169 37 C 169 35.3 170.3 34.4 171.6 34.4 C 172.8 34.4 173.8 35 176 37 C 178.2 35 179.2 34.4 180.4 34.4 C 181.7 34.4 183 35.3 183 37 C 183 39.6 180 41.5 176 45 Z" fill="currentColor"/>
   <g fill="var(--brand-lavender, #a99cdb)">
-    <!-- left loop -->
-    <path d="M56 34 C 42 18, 24 20, 30 34 C 24 48, 42 50, 56 34 Z"/>
-    <!-- right loop -->
-    <path d="M56 34 C 70 18, 88 20, 82 34 C 88 48, 70 50, 56 34 Z"/>
-    <!-- tails -->
-    <path d="M52 37 L 45 58 L 54 48 L 63 58 L 60 37 Z"/>
+    <path d="M90 49 C 68 21, 40 27, 55 49 C 44 63, 76 65, 90 49 Z"/>
+    <path d="M90 49 C 110 23, 135 28, 122 49 C 133 62, 104 64, 90 49 Z"/>
+    <path d="M85 52 L 74 92 L 85 81 L 96 94 L 92 52 Z"/>
   </g>
-  <!-- knot, deeper lavender -->
-  <ellipse cx="56" cy="34.5" rx="5" ry="7" fill="var(--brand-lavender-deep, #8577c2)"/>
+  <rect x="82" y="41" width="15" height="19" rx="6" fill="var(--brand-lavender-deep, #8577c2)"/>
 </svg>
