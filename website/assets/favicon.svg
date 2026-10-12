@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Bows and Spoons">
+  <rect width="48" height="48" rx="11" fill="#a99cdb"/>
+  <g fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="35" cy="26" rx="6.5" ry="5" transform="rotate(-8 35 26)"/>
+    <path d="M28.5 27 C 24 29, 20 28.5, 17 26.5"/>
+  </g>
+  <path d="M38.6 23.4 C 37.2 22.1 36 21.4 36 20.4 C 36 19.7 36.5 19.4 37 19.4 C 37.5 19.4 37.9 19.6 38.6 20.4 C 39.3 19.6 39.7 19.4 40.2 19.4 C 40.7 19.4 41.2 19.7 41.2 20.4 C 41.2 21.4 40 22.1 38.6 23.4 Z" fill="#fff"/>
+  <g fill="#fff">
+    <path d="M17 25 C 9 15 2.5 18 8 25 C 2.5 32 13 33 17 25 Z"/>
+    <path d="M17 25 C 23 17 30 19 25.5 25 C 30 31 20 32 17 25 Z"/>
+    <path d="M15 27 L 11 39 L 15.5 34 L 20 40 L 19 27 Z"/>
+  </g>
+  <rect x="13.5" y="21.5" width="7.2" height="9.5" rx="3" fill="#ede9f8"/>
+</svg>
